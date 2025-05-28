@@ -1,0 +1,10 @@
+.text {
+    margin-left: 20px;
+    color: #000000;
+  }
+
+.image-text-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}

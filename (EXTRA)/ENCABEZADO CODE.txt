@@ -1,0 +1,226 @@
+<IN HTML>
+    <!--ESTO SE COLOCA AL INICIO DE TODO-->
+  <header>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ul class="nav">
+      <li><a href="index.html"><b>Inicio</b></a>  
+      <li><a><b>Historia</b></a>
+        <ul>
+          <li><a href="historia.html">Inicio</a></li>
+          <li><a href="">50 Años</a></li>
+        </ul>
+      </li>
+      <li><a><b>Identidad Institucional</b></a>
+        <ul>
+          <li><a href="">Bastoneras</a></li>
+          <li><a href="banda.html">Banda de Paz</a></li>
+          <li><a href="">Seleccion de Futbol</a></li>
+          <li><a href="">Seleccion de Voley</a></li>
+          <li><a href="">Grupo de Danza</a></li>
+        </ul>
+      </li>
+      <li><a><b>Jornadas</b></a>
+        <ul>
+          <li><a href="">Matutina</a></li>
+          <li><a href="">Vespertina</a></li>
+        </ul>
+      </li>
+<!--      <li><a href="docentes/docentes.php"><b>Docentes</b></a>  -->
+      <li><a href="areavespertina.html"><b>Docentes</b></a>  
+      </ul>
+
+    <form action="https://ww2.sgacloud.net/estudiantes/ue5j">
+      <div class="hola"><input type="submit" class="login-button" value="Login"></div>
+    </form>
+</header>
+    <!--ESTO SE COLOCA AL INICIO DE TODO-->
+
+    <!--ESTO SE COLOCA AL FINAL DE TODO-->
+    <footer style="background-color: #012391;">
+      <div class="footer-container">
+        <div class="social-media">
+          <h2>Redes Sociales</h2>
+          <div class="social-icons">
+            <div class="icon-container">
+              <a href=""><img src="../images/index/f.png" alt="Icono de Red Social 1" width="50" height="50"></a>
+            </div>
+            <div class="icon-container">
+            <a href=""><img src="../images/index/i.png" alt="Icono de Red Social 2" width="50" height="50"></a> 
+            </div>
+            <div class="icon-container">
+            <a href=""><img src="../images/index/t.png" alt="Icono de Red Social 3" width="50" height="50"></a> 
+            </div>
+            <div class="icon-container">
+              <a href=""><img src="../images/index/x.png" alt="Icono de Red Social 4" width="50" height="50"></a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-us">
+            <h2>Contactanos</h2>
+            <div class="icon-container">
+              <img src="../images/index/te.png" alt="Imagen de Contacto" width="50" height="50">
+              <span>022-648-263 <br>
+                022-648-261 <br> 022-614-245</span>
+            </div>
+            <br>
+            <div class="icon-container">
+                <img src="../images/index/g.png" alt="Imagen de Contacto" width="50" height="50">
+                <span>17h00910@gmail.com</span>
+              </div>
+          </div>
+          <div class="find-us">
+            <h2>Encuentranos</h2>
+            <div class="icon-container">
+              <img src="../images/index/ubi.png" alt="Imagen de Encuentranos" width="50" height="50">
+              <span>Pinllopata OE1-389 <br> Moraspungo (El Calzado)</span>
+            </div>
+          </div>
+        </div>
+    </footer> 
+    <!--ESTO SE COLOCA AL FINAL DE TODO-->
+<IN HTML>
+
+<IN CSS>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+        background-image: url(../encandfoot/banderadefin.png);
+        padding: 75px 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-repeat: no-repeat;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+      }
+      
+      *{
+        padding: 0px;
+        margin: 0px;
+      }
+      
+      ul, ol{
+        list-style: none;
+      }
+      
+      .nav{
+        margin-top: -26px;
+        margin-left: -710px;
+      }
+      
+      .nav li a{
+        background-color: #fff;
+        color: #000;
+        text-decoration: none;
+        padding: 10px 15px;
+        display: block;
+        transition: .3s;
+      }
+      
+      .nav li a:hover{
+        background-color: #3c69be;
+      }
+      
+      .nav > li{
+        float: left;
+      }
+      
+      .nav li ul{
+        display: none;
+        position: absolute;
+        min-width: 140px;
+      }
+      
+      .nav li:hover > ul{
+        display: block;
+      }
+      
+      .login-button {
+        background-color: #012391;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+        margin-top: -100%;
+      }
+      
+      .login-button:hover {
+        background-color: #00196b;
+      }
+      
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      
+      .footer-container h2 {
+        color: #000000;
+      }
+      
+      .social-media img,
+      .contact-us img,
+      .find-us img {
+        display: block;
+      }
+      
+      @media screen and (max-width: 768px) {
+        .footer-container {
+          flex-direction: column;
+          text-align: center;
+        }
+      }
+      .social-icons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px; 
+      }
+      
+      .icon-container {
+        display: flex;
+        align-items: center;
+      }
+      
+      .icon-container img {
+        margin-right: 10px; 
+      }
+      .icon-container {
+        display: flex;
+        align-items: center;
+      }
+      
+      .icon-container img {
+        margin-right: 10px; 
+      }
+      
+      .icon-container span {
+        color: rgb(0, 0, 0);
+      }
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+      
+        display: flexbox;
+        width: 100%;
+        height: 25%;
+        bottom: 0;
+      }
+<IN CSS>
