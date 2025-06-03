@@ -22,6 +22,13 @@ header {
   margin-left: 40px;
 }
 
+@media screen and (max-width: 768px) {
+  .logo img{
+    width: 75px;
+    margin-left: 10px;
+  }
+}
+
 *{
   padding: 0px;
   margin: 0px;
@@ -59,7 +66,7 @@ ul, ol{
   height: 3px;
   background-color: rgb(0, 0, 0);
   margin: 4px;
-  margin-left: 850%;
+  margin-left: 500%;
 }
 
 /* Estilos responsivos */
@@ -141,7 +148,7 @@ ul, ol{
 
 @media screen and (max-width: 768px) {
   .login-button {
-    margin-left: 45%;
+    margin-left: -15%;
     }
 }
 
@@ -205,8 +212,8 @@ ul, ol{
 
 @media screen and (max-width: 768px) {
   .icon-container img {
-    width: 100px;
-    height: 100px;
+    width: 50px;
+    height: 50px;
   }
 }
 
@@ -231,7 +238,7 @@ footer {
 @media screen and (max-width: 768px) {
   .gallery {
   margin-top: -23%;
-  height: 130px; 
+  height: 200px; 
   width: 470px;
   }
 
@@ -241,6 +248,13 @@ footer {
 
   .hover-image.right{
     width: 32%;
+  }
+}
+
+@media screen and (max-width: 500px){
+  .gallery{
+    height: 100px; 
+    width: 350px;
   }
 }
 
