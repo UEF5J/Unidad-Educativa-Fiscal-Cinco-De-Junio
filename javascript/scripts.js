@@ -8,6 +8,7 @@ function changeImage() {
   currentImageIndex = (currentImageIndex + 1) % images.length;
 }
 setInterval(changeImage, 4000);
+
 const leftImage = document.querySelector('.hover-image.left');
 const rightImage = document.querySelector('.hover-image.right');
 
@@ -26,6 +27,7 @@ rightImage.addEventListener('mouseover', () => {
 rightImage.addEventListener('mouseout', () => {
     rightImage.src = 'images/index/bv.png';
 });
+
 document.addEventListener("DOMContentLoaded", function() {
   const menuIcon = document.querySelector('.menu-icon');
   const menu = document.querySelector('.menu');

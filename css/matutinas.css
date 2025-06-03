@@ -1,3 +1,7 @@
+html{
+  overflow-x: hidden;
+}
+
 body {
   font-family: Arial, sans-serif;
   text-align: justify;
@@ -103,11 +107,16 @@ ul, ol{
   width: 25px;
   height: 3px;
   background-color: rgb(0, 0, 0);
-  margin: 4px 450px;
+  margin: 4px;
+  margin-left: 850%;
 }
 
 /* Estilos responsivos */
 @media (max-width: 768px) {
+  header{
+    margin-bottom: 10%;
+  }
+
   .menu {
       display: none;
       flex-direction: column;
@@ -176,8 +185,14 @@ ul, ol{
   border-radius: 5px;
   transition: background-color 0.3s, color 0.3s;
   margin-top: 15%;
-  margin-left: 200%;
+  margin-left: 35%;
   }
+
+@media screen and (max-width: 768px) {
+    .login-button{
+      margin-left: 45%;
+    }
+}
 
 .login-button:hover {
   background-color: #00196b;
@@ -185,7 +200,7 @@ ul, ol{
 
 /*pie de pagina*/
 .footer-container {
-  max-width: 1200px;
+/*  max-width: 1200px;*/
   margin: 0 auto;
   padding: 20px;
   display: flex;
@@ -207,6 +222,7 @@ ul, ol{
   .footer-container {
     flex-direction: column;
     text-align: center;
+    padding: 200px;
   }
 }
 .social-icons {
@@ -235,6 +251,14 @@ ul, ol{
 .icon-container span {
   color: rgb(0, 0, 0);
 }
+
+@media screen and (max-width: 768px) {
+    .icon-container img{
+      width: 100px;
+      height: 100px;
+    }
+}
+
 footer {
   background-color: #333;
   color: #fff;
@@ -249,10 +273,11 @@ footer {
 
 #btn-menu{
   display: none;
+  overflow-x: hidden;
 }
 
 .icon-equis{
-  left: 230px;
+  left: 330px;
 }
 
 .container-menu{
@@ -266,6 +291,7 @@ footer {
   transition: all 500ms ease;
   opacity: 0;
   visibility: hidden;
+  z-index: 2;
 }
 
 @media screen and (max-width: 768px){
@@ -277,7 +303,7 @@ footer {
 
 .cont-menu{
   width: 1000%;
-  max-width: 250px;
+  max-width: 350px;
   background: #ffffff;
   height: 100vh;
   position: relative;
@@ -297,7 +323,7 @@ footer {
   display: block;
   text-decoration: none;
   padding: 10px;
-  font-size: 10px;
+  font-size: 25px;
   color: #000000;
   border-left: 5px solid transparent;
   transition: all 400ms ease;
