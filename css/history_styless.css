@@ -9,7 +9,7 @@ html{
 
 body {
   font-family: Arial, sans-serif;
-  background-image: url(images/historia/historiaf.png);
+  background-image: url(../images/historia/historiaf.png);
   text-align: justify;
   overflow-x: hidden;
 }
@@ -49,7 +49,7 @@ b{
   background-repeat: no-repeat;
 }*/
 .recuadro {
-  
+  padding: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 5px;
@@ -73,6 +73,23 @@ font-family: fantasy;
   .logo img{
     width: 75px;
     margin-left: 10px;
+  }
+
+  b{
+    font-size: large;
+  }
+
+    .image-text-container{
+      flex-direction: column;
+    }
+
+      .animated-image{
+    opacity: 1;
+    width: 200px;
+  }
+
+    .text{
+    font-size: small;
   }
 }
 
