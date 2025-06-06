@@ -28,8 +28,8 @@ b{
 .animated-image {
   width: 300px;
   height: auto;
-  opacity: 0;
-  transition: opacity 4s ease;
+/*  opacity: 0;
+  transition: opacity 4s ease;*/
   border: 10px solid rgb(235, 153, 77);
 }
 
