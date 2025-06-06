@@ -111,6 +111,23 @@
         </div>
     </footer>
 
+    <input type="checkbox" id="btn-menu">
+    <div class="container-menu">
+      <div class="cont-menu">
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="noticias.html">Noticias</a>
+            <a href="bastoneras.html">Bastoneras</a>
+            <a href="banda.html">Banda De Paz</a>
+            <a href="futbol.html">Seleccion De Fútbol</a>
+            <a href="danza.html">Grupo De Danza</a>
+            <a href="matutina.html">Matutina</a>
+            <a href="vespertina.html">Vespertina</a>
+        </nav>
+        <label for="btn-menu" class="icon-equis"><font color="black">x</font></label>
+      </div>
+    </div>
+
     <!-- Firebase SDK -->
     <script type="module">
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
@@ -148,7 +165,7 @@
                 const querySnapshot = await getDocs(q);
                 
                 if (querySnapshot.empty) {
-                    newsContainer.innerHTML = '<div class="no-news">No hay noticias disponibles en este momento</div>';
+                    newsContainer.innerHTML = '<div class="no-news">No hay noticias disponibles en este momento.<br>Intenta recargando la página.</div>';
                 } else {
                     newsContainer.innerHTML = '';
                     querySnapshot.forEach((doc) => {
