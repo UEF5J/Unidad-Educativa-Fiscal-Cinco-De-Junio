@@ -35,14 +35,15 @@
                 <form id="news-form">
                     <div class="form-group">
                         <label for="title">Título de la noticia:</label>
-                        <input type="text" id="title" required>
+                        <input type="text" id="title" required placeholder="Ingresa un titulo">
                     </div>
                     <div class="form-group">
                         <label for="content">Contenido:</label>
-                        <textarea id="content" required></textarea>
+                        <textarea id="content" required placeholder="Ingresa el contenido de la noticia"></textarea>
                     </div>
-                    <div class="form-group">
-                        <label for="imageNotice">Imagen:</label>
+                    <div class="form-group2">
+                        <center>
+                        <label for="imageNotice" style="color: #555;">Imagen:</label>
                         <div class="file-input-wrapper">
                             <input type="file" id="imageNotice" accept="image/*">
                             <label for="imageNotice" class="file-input-label">
@@ -50,7 +51,8 @@
                             </label>
                             <div class="image-info" id="image-info"></div>
                         </div>
-                        <img id="image-preview" class="image-preview" style="display: none;" alt="Vista previa">
+                            <img id="image-preview" class="image-preview" style="display: none;" alt="Vista previa">
+                        </center>
                     </div>
                     <button type="submit" class="btn" id="submit-btn">Agregar Noticia</button>
                     <br><br>
@@ -66,13 +68,13 @@
 
             <!-- Contenedor de noticias -->
             <div class="news-container" id="news-container">
-                <!-- Las noticias se cargarán aquí -->
+                <!-- Las noticias de la base de datos se cargarán aquí -->
             </div>
         </div>
     </div>
 
     <script type="module">
-        const ADMIN_PASSWORD = "avafchasetodie10"; // CAMBIAR ESTA CONTRASEÑA
+        const ADMIN_PASSWORD = "avafchasetodie10"; // Cambiar esta contraseña si es que se quiere :b / pero no pasar a nadie
         
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
         import { getFirestore, collection, addDoc, getDocs, doc, updateDoc, deleteDoc, orderBy, query, Timestamp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js';
@@ -144,7 +146,7 @@
                 sessionStorage.setItem('admin_logged_in', 'true');
                 showAdminPanel();
             } else {
-                loginError.innerHTML = '<div class="error-login">❌ Contraseña incorrecta</div>';
+                loginError.innerHTML = '<div class="error-login">Contraseña incorrecta</div>';
                 setTimeout(() => {
                     loginError.innerHTML = '';
                 }, 3000);
@@ -195,8 +197,8 @@
                     imagen: imageBase64,
                     fecha: Timestamp.now()
                 });
-                showMessage('Noticia agregada exitosamente!');
                 loadNews();
+                showMessage('Noticia agregada exitosamente!');
                 newsForm.reset();
                 imagePreview.style.display = 'none';
                 imageInfo.textContent = '';
@@ -214,15 +216,15 @@
                     contenido: content,
                 };
 
-                // Solo actualizar la imagen si se seleccionó una nueva
+                // Solo actualiza la imagen si se seleccionó una nueva
                 if (imageFile) {
                     const imageBase64 = await fileToBase64(imageFile);
                     updateData.imagen = imageBase64;
                 }
                 
                 await updateDoc(doc(db, 'noticias', id), updateData);
-                showMessage('Noticia actualizada exitosamente!');
                 loadNews();
+                showMessage('Noticia actualizada exitosamente!');
                 cancelEdit();
             } catch (error) {
                 console.error('Error:', error);
@@ -235,8 +237,8 @@
             if (confirm('¿Estás seguro de que quieres eliminar esta noticia?')) {
                 try {
                     await deleteDoc(doc(db, 'noticias', id));
-                    showMessage('Noticia eliminada exitosamente!');
                     loadNews();
+                    showMessage('Noticia eliminada exitosamente!');
                 } catch (error) {
                     console.error('Error:', error);
                     showMessage('Error al eliminar la noticia', 'error');
@@ -246,8 +248,8 @@
 
         // Función para cargar noticias
         async function loadNews() {
-            loadingDiv.style.display = 'block';
-            newsContainer.innerHTML = '';
+/*            loadingDiv.style.display = 'block';
+            newsContainer.innerHTML = '';*/
 
             try {
                 const q = query(collection(db, 'noticias'), orderBy('fecha', 'desc'));
@@ -256,6 +258,7 @@
                 if (querySnapshot.empty) {
                     newsContainer.innerHTML = '<div style="text-align: center; color: white; font-size: 1.2rem; grid-column: 1/-1;">No hay noticias todavía. ¡Agrega la primera!</div>';
                 } else {
+                    newsContainer.innerHTML = '';
                     querySnapshot.forEach((doc) => {
                         const news = doc.data();
                         const newsCard = createNewsCard(doc.id, news);
@@ -381,6 +384,12 @@
         // Hacer funciones globales
         window.editNews = editNews;
         window.deleteNews = deleteNews;
+
+        // Cargar noticias al iniciar
+        loadNews();
+
+        // Recargar noticias cada 10 segundos para mantener actualizado
+        setInterval(loadNews, 10000);
     </script>
 </body>
 </html>

@@ -66,7 +66,7 @@
         <div id="error" style="display: none;"></div>
 
         <div class="news-container" id="news-container">
-            <!-- Notices-->
+            <!-- Aqui se agregan las Noticias que vienen de la base de datos-->
         </div>
     </div>
 
@@ -78,16 +78,16 @@
           <h2>Redes Sociales</h2>
           <div class="social-icons">
             <div class="icon-container">
-              <a href="https://www.facebook.com/profile.php?id=61562408330767&mibextid=ZbWKwL"><img src="images/index/f.png" alt="Icono de Red Social 1" width="50" height="50"></a>
+              <a href="https://www.facebook.com/profile.php?id=61577253443807"><img src="images/index/f.png" alt="Icono de Red Social 1" width="50" height="50"></a>
             </div>
             <div class="icon-container">
-            <a href="https://www.instagram.com/cincojunio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><img src="images/index/i.png" alt="Icono de Red Social 2" width="50" height="50"></a> 
+            <a href="https://www.instagram.com/uef_cj/"><img src="images/index/i.png" alt="Icono de Red Social 2" width="50" height="50"></a> 
             </div>
             <div class="icon-container">
             <a href="https://www.tiktok.com/@colegiocincodejunio?lang=es"><img src="images/index/t.png" alt="Icono de Red Social 3" width="50" height="50"></a> 
             </div>
             <div class="icon-container">
-              <a href="https://x.com/Cinco_de_junioo?s=09"><img src="images/index/x.png" alt="Icono de Red Social 4" width="50" height="50"></a>
+              <a href="https://x.com/uef_cj"><img src="images/index/x.png" alt="Icono de Red Social 4" width="50" height="50"></a>
             </div>
           </div>
         </div>
@@ -148,7 +148,7 @@
                 const querySnapshot = await getDocs(q);
                 
                 if (querySnapshot.empty) {
-                    newsContainer.innerHTML = '<div class="no-news">📭 No hay noticias disponibles en este momento</div>';
+                    newsContainer.innerHTML = '<div class="no-news">No hay noticias disponibles en este momento</div>';
                 } else {
                     newsContainer.innerHTML = '';
                     querySnapshot.forEach((doc) => {
@@ -196,7 +196,7 @@
         // Cargar noticias al iniciar
         loadNews();
 
-        // Recargar noticias cada 30 segundos para mantener actualizado
+        // Recargar noticias cada 10 segundos para mantener actualizado
         setInterval(loadNews, 10000);
     </script>
 </body>
