@@ -222,6 +222,15 @@ h1 {
   background-color: #607ed19a;
   border-radius: 20px;
 }
+
+.titulito {
+  padding: 7px 7px;
+  background-color: #60d17c9a;
+  border-radius: 20px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
 .players {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -241,6 +250,7 @@ h1 {
 }
 .player-name {
     font-weight: bold;
+    font-size: larger;
 }
 
 @media screen and (max-width: 768px) {
